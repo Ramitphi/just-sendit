@@ -37,7 +37,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     const last_claim = (Date.now() - Number(past_date)) / 1000 / (60 * 60);
     console.log(last_claim);
 
-    if (last_claim >= 12) {
+    if (last_claim <= 12) {
       const success = await transferToken(accountAddress || "", randomAmount);
       console.log({ success });
 
