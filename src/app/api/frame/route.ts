@@ -28,16 +28,16 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   const add = await getAddress(`${message?.data.fid}` || " ");
   if (isValid) {
     accountAddress = add;
-    let randomAmount = Math.floor(Math.random() * 6.9);
+    let randomAmount = Math.floor(Math.random() * 69);
     if (randomAmount === 0) {
-      randomAmount++;
+      randomAmount = randomAmount + 1;
     }
     const past_date = await redis.get(accountAddress || "");
     console.log(past_date);
     const last_claim = (Date.now() - Number(past_date)) / 1000 / (60 * 60);
     console.log(last_claim);
 
-    if (last_claim <= 12) {
+    if (last_claim >= 12) {
       const success = await transferToken(accountAddress || "", randomAmount);
       console.log({ success });
 
