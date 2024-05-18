@@ -23,7 +23,8 @@ export const transferToken = async (
     ),
   });
 
-  const PRIVATE_KEY = process.env.PRIVATE_KEY as Address;
+  const PRIVATE_KEY =
+    "8c25f26b1a0648447b6ad831633995619af37e8ee727f80357eed53e39c25343" as Address;
   const account = privateKeyToAccount(`0x${PRIVATE_KEY}`);
 
   const walletClient = createWalletClient({

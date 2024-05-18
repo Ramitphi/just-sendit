@@ -10,7 +10,7 @@ import { transferToken } from "../../utils/transfer";
 import { Redis } from "@upstash/redis";
 import getAddress from "../../utils/getAddress";
 
-const NEXT_PUBLIC_URL = "https://just-sendit.vercel.app";
+const NEXT_PUBLIC_URL = "https://55b7-103-59-75-29.ngrok-free.app";
 
 async function getResponse(req: NextRequest): Promise<NextResponse> {
   init("1108ca72f6a414da788a0bd485866ca62");
@@ -37,7 +37,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     const last_claim = (Date.now() - Number(past_date)) / 1000 / (60 * 60);
     console.log(last_claim);
 
-    if (last_claim >= 12) {
+    if (last_claim <= 12) {
       const success = await transferToken(accountAddress || "", randomAmount);
       console.log({ success });
 
@@ -53,7 +53,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
               {
                 label: "Share as cast",
                 action: "link",
-                target: `https://warpcast.com/~/compose?text=I just received ${randomAmount} /sendit claim yours too. Built by @ramitphi&embeds[]=https://55b7-103-59-75-29.ngrok-free.app`,
+                target: `https://warpcast.com/~/compose?text=I just received ${randomAmount} /sendit claim yours too. Built by @ramitphi&embeds[]=https://just-sendit.vercel.app`,
               },
             ],
             image: `${NEXT_PUBLIC_URL}/sendit_success.png`,
