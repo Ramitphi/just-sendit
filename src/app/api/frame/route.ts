@@ -53,7 +53,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
               {
                 label: "Share as cast",
                 action: "link",
-                target: `https://warpcast.com/~/compose?text=I just received ${randomAmount} /sendit claim yours too. Built by @ramitphi&embeds[]=https://just-sendit.vercel.app`,
+                target: `https://warpcast.com/~/compose?text=I just received ${randomAmount} $Sendit claim yours too. Built by @ramitphi&embeds[]=https://just-sendit.vercel.app`,
               },
             ],
             image: `${NEXT_PUBLIC_URL}/sendit_success.png`,
