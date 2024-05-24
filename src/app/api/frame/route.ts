@@ -48,15 +48,15 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
           getFrameHtmlResponse({
             buttons: [
               {
-                label: `You recived ${randomAmount} $Sendit`,
+                label: `You recived ${randomAmount} $Enjoy`,
               },
               {
                 label: "Share as cast",
                 action: "link",
-                target: `https://warpcast.com/~/compose?text=I just received ${randomAmount} $Sendit claim yours too. Built by @ramitphi&embeds[]=https://just-sendit.vercel.app`,
+                target: `https://warpcast.com/~/compose?text=I just received ${randomAmount} $Enjoy claim yours too. Built by @ramitphi&embeds[]=https://just-sendit.vercel.app`,
               },
             ],
-            image: `${NEXT_PUBLIC_URL}/sendit_success.png`,
+            image: `${NEXT_PUBLIC_URL}/finenjoy.png`,
             post_url: `${NEXT_PUBLIC_URL}/api/frame`,
           })
         );

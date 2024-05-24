@@ -7,7 +7,7 @@ import {
   parseEther,
 } from "viem";
 import { privateKeyToAccount } from "viem/accounts";
-import { base } from "viem/chains";
+import { base, zora } from "viem/chains";
 
 import abi from "./abi";
 
@@ -17,10 +17,8 @@ export const transferToken = async (
   amount: number
 ) => {
   const client = createPublicClient({
-    chain: base,
-    transport: http(
-      "https://base-mainnet.g.alchemy.com/v2/rMYr-Rk_99PwVZE8cioxT0aXKskRXRu7"
-    ),
+    chain: zora,
+    transport: http(),
   });
 
   const PRIVATE_KEY = process.env.PRIVATE_KEY as Address;
@@ -28,16 +26,14 @@ export const transferToken = async (
 
   const walletClient = createWalletClient({
     account,
-    chain: base,
-    transport: http(
-      "https://base-mainnet.g.alchemy.com/v2/rMYr-Rk_99PwVZE8cioxT0aXKskRXRu7"
-    ),
+    chain: zora,
+    transport: http(),
   }).extend(publicActions);
 
   try {
     const { request } = await walletClient.simulateContract({
       account,
-      address: "0xBa5B9B2D2d06a9021EB3190ea5Fb0e02160839A4",
+      address: "0xa6B280B42CB0b7c4a4F789eC6cCC3a7609A1Bc39",
       abi: abi,
       functionName: "transfer",
       args: [recipient_address, parseEther(`${amount}`)],

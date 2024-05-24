@@ -6,10 +6,10 @@ const NEXT_PUBLIC_URL = "https://just-sendit.vercel.app";
 const frameMetadata = getFrameMetadata({
   buttons: [
     {
-      label: "Just Sendit ↗",
+      label: "Enjoooyyyyyy !!!",
     },
   ],
-  image: `${NEXT_PUBLIC_URL}/sendit.png`,
+  image: `${NEXT_PUBLIC_URL}/enjoy.png`,
 
   post_url: `${NEXT_PUBLIC_URL}/api/frame`,
 });
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "ramit",
     description: "LFG",
-    images: [`${NEXT_PUBLIC_URL}/success.png`],
+    images: [`${NEXT_PUBLIC_URL}/enjoy.png`],
   },
   other: {
     ...frameMetadata,
